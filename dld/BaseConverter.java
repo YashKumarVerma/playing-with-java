@@ -1,20 +1,18 @@
 import java.lang.System;
-import java.util.Arrays;
-import java.math.BigInteger;
-import java.math.BigDecimal;
 
 public class BaseConverter {
     /** data members */
     private long integerPart;
-    private long fractionPart;
+    private float fractionPart;
     private int sourceRadix;
     private int targetRadix;
 
-    /** member functions */
+    /** caller function */
     public static void main(String[] args) {
         BaseConverter baseConverter = new BaseConverter(args);
     }
 
+    /** constructor */
     public BaseConverter(String[] args) {
         /** ensure that valid arguments are passed */
         if (!this.validArguments(args)) {
@@ -27,7 +25,7 @@ public class BaseConverter {
         System.out.println("Source Radix : " + this.sourceRadix);
         System.out.println("Target Radix : " + this.targetRadix);
 
-        // this.generateAnswers();
+        this.generateAnswers();
     }
 
     /** function to check if argument is valid */
@@ -40,7 +38,7 @@ public class BaseConverter {
 
             if (args[0].contains(".")) {
                 this.integerPart = Integer.parseInt(args[0].substring(0, args[0].indexOf(".")));
-                this.fractionPart = Integer.parseInt(args[0].substring(args[0].indexOf(".") + 1));
+                this.fractionPart = Float.parseFloat("0." + args[0].substring(args[0].indexOf(".") + 1));
             } else {
                 this.integerPart = Integer.parseInt(args[0]);
                 this.fractionPart = 0;
@@ -61,19 +59,20 @@ public class BaseConverter {
         }
     }
 
-    /**
-     * function to convert numbers from one state to another
-     */
+    /** function to convert numbers from one state to another */
     private void generateAnswers() {
-        // if (this.isFraction == true) {
-        // /** process fractional item here */
-        // BigInteger one = new BigInteger("1");
-        // BigInteger integerPart = this.sourceNumberFloat.divide(one);
-        // System.out.println("Integer Part : " + integerPart);
+        System.out.println();
+        System.out.println("Converting from base " + this.sourceRadix + " to " + this.targetRadix);
 
-        // } else {
-        // /** process integer items here */
-        // }
+        int binaryOfInteger[] = new int[128];
+        int binaryOfIntegerCounter = 0;
+
+        int binaryOfFraction[] = new int[128];
+        int binaryOfFractionCounter = 0;
+        
+        
+        int 
+        /** first convert any base to decimal */
     }
 
 }
