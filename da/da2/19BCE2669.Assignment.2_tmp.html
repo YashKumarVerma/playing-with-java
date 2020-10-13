@@ -1,0 +1,1778 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>19BCE2669.Assignment.2.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="digital-assignment-2">Digital Assignment 2</h1>
+<ul>
+<li>Submitted by: Yash Kumar Verma / 19BCE2669</li>
+<li>All codes in this document are available at <a href="https://github.com/yashkumarverma-bot/semester3">https://github.com/yashkumarverma-bot/semester3</a></li>
+<li>The questions from problem set &quot;Assignment 2&quot; are solved first, then the remaining questions from &quot;Assignment 1&quot;</li>
+</ul>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a Java program to print all the distinct elements in an array. Distinct elements are
+nothing but the unique (non-duplicate) elements present in the given array.</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DistinctElementsOfArray</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+        System.out.print(<span class="hljs-string">"Enter number of elements : "</span>);
+        <span class="hljs-keyword">int</span> items = handler.nextInt();
+        <span class="hljs-keyword">int</span> data[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[items];
+        <span class="hljs-keyword">int</span> dc = <span class="hljs-number">0</span>;
+        System.out.println(<span class="hljs-string">"Enter "</span> + items + <span class="hljs-string">" values : "</span>);
+        <span class="hljs-keyword">int</span> temp;
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; items; i++) {
+            temp = handler.nextInt();
+            <span class="hljs-keyword">if</span> (!DistinctElementsOfArray.arrayContains(data, temp)) {
+                System.out.println(<span class="hljs-string">"&gt; "</span> + temp + <span class="hljs-string">" "</span>);
+                data[dc++] = handler.nextInt();
+            }
+        }
+
+        handler.close();
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">arrayContains</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] haystack, <span class="hljs-keyword">int</span> needle)</span> </span>{
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> item : haystack) {
+            <span class="hljs-keyword">if</span> (item == needle) {
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+            }
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/J9CBLu3.png" alt="https://i.imgur.com/J9CBLu3.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a Java program to check if the given character is a vowel or consonant.</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">ArrayFiltering</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">arrayContains</span><span class="hljs-params">(<span class="hljs-keyword">char</span>[] haystack, <span class="hljs-keyword">char</span> needle)</span> </span>{
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">char</span> item : haystack) {
+            <span class="hljs-keyword">if</span> (item == needle) {
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+            }
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    }
+};
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">VowelOrConsonant</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">ArrayFiltering</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        <span class="hljs-keyword">char</span> vowels[] = { <span class="hljs-string">'A'</span>, <span class="hljs-string">'E'</span>, <span class="hljs-string">'I'</span>, <span class="hljs-string">'O'</span>, <span class="hljs-string">'U'</span>, <span class="hljs-string">'a'</span>, <span class="hljs-string">'e'</span>, <span class="hljs-string">'i'</span>, <span class="hljs-string">'o'</span>, <span class="hljs-string">'u'</span> };
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+
+        System.out.print(<span class="hljs-string">"Enter a string : "</span>);
+        String string = handler.nextLine();
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; string.length(); i += <span class="hljs-number">1</span>) {
+            <span class="hljs-keyword">if</span> (ArrayFiltering.arrayContains(vowels, string.charAt(i))) {
+                System.out.println(<span class="hljs-string">"&gt; "</span> + string.charAt(i) + <span class="hljs-string">" is a vowel."</span>);
+            } <span class="hljs-keyword">else</span> {
+                System.out.println(<span class="hljs-string">"&gt; "</span> + string.charAt(i) + <span class="hljs-string">" is a consonant."</span>);
+            }
+        }
+    }
+
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/8TK8k3R.png" alt="https://i.imgur.com/8TK8k3R.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Program to find frequency of words</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">ArrayUtil</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">arrayContains</span><span class="hljs-params">(<span class="hljs-keyword">char</span>[] haystack, <span class="hljs-keyword">char</span> needle)</span> </span>{
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">char</span> item : haystack) {
+            <span class="hljs-keyword">if</span> (item == needle) {
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+            }
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">indexOf</span><span class="hljs-params">(<span class="hljs-keyword">char</span>[] haystack, <span class="hljs-keyword">char</span> needle)</span> </span>{
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; haystack.length; i += <span class="hljs-number">1</span>) {
+            <span class="hljs-keyword">if</span> (haystack[i] == needle) {
+                <span class="hljs-keyword">return</span> i;
+            }
+        }
+
+        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;
+    }
+};
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FrequencyOfItems</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">ArrayUtil</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+        System.out.print(<span class="hljs-string">"Enter a string : "</span>);
+        String string = handler.nextLine();
+        <span class="hljs-keyword">char</span> characters[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[string.length()];
+        <span class="hljs-keyword">int</span> instances[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[string.length()];
+        <span class="hljs-keyword">int</span> uniques = <span class="hljs-number">0</span>;
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; string.length(); i += <span class="hljs-number">1</span>) {
+            <span class="hljs-keyword">if</span> (ArrayUtil.arrayContains(characters, string.charAt(i))) {
+                instances[ArrayUtil.indexOf(characters, string.charAt(i))] += <span class="hljs-number">1</span>;
+            } <span class="hljs-keyword">else</span> {
+                characters[uniques] = string.charAt(i);
+                instances[uniques] = <span class="hljs-number">1</span>;
+                uniques++;
+            }
+        }
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; uniques; i += <span class="hljs-number">1</span>) {
+            System.out.println(<span class="hljs-string">"&gt; "</span> + characters[i] + <span class="hljs-string">" occurs "</span> + instances[i] + <span class="hljs-string">" times."</span>);
+        }
+    }
+}
+
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/b8sf0BQ.png" alt="https://i.imgur.com/b8sf0BQ.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a Java program to find the length of a string without using strlen()
+function</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LengthOfString</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+        System.out.print(<span class="hljs-string">"Enter a string : "</span>);
+        String string = handler.nextLine();
+        <span class="hljs-keyword">int</span> stringLength = <span class="hljs-number">0</span>;
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">char</span> c : string.toCharArray()) {
+            stringLength++;
+        }
+
+        System.out.println(<span class="hljs-string">"&gt; Length of String \""</span> + string + <span class="hljs-string">"\" is "</span> + stringLength);
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/dCuEeUJ.png" alt="https://i.imgur.com/dCuEeUJ.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a Java program to remove all characters in a string except
+alphabet.</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LengthOfString</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+        System.out.print(<span class="hljs-string">"Enter a string : "</span>);
+        String string = handler.nextLine();
+        <span class="hljs-keyword">int</span> stringLength = <span class="hljs-number">0</span>;
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">char</span> c : string.toCharArray()) {
+            stringLength++;
+        }
+
+        System.out.println(<span class="hljs-string">"&gt; Length of String \""</span> + string + <span class="hljs-string">"\" is "</span> + stringLength);
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/xXpZABn.png" alt="https://i.imgur.com/xXpZABn.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a Java program to find the largest palindrome in an array</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LargestPalindrome</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">printSubString</span><span class="hljs-params">(String string, <span class="hljs-keyword">int</span> low, <span class="hljs-keyword">int</span> high)</span> </span>{
+        System.out.println(string.substring(low, high + <span class="hljs-number">1</span>));
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">longestPalindromeString</span><span class="hljs-params">(String str)</span> </span>{
+        <span class="hljs-keyword">int</span> start = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">int</span> maxLength = <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">int</span> length = str.length();
+        <span class="hljs-keyword">boolean</span> table[][] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">boolean</span>[length][length];
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; length; ++i) {
+            table[i][i] = <span class="hljs-keyword">true</span>;
+        }
+
+        <span class="hljs-comment">// check for sub-string of length 2.</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; length - <span class="hljs-number">1</span>; ++i) {
+            <span class="hljs-keyword">if</span> (str.charAt(i) == str.charAt(i + <span class="hljs-number">1</span>)) {
+                table[i][i + <span class="hljs-number">1</span>] = <span class="hljs-keyword">true</span>;
+                start = i;
+                maxLength = <span class="hljs-number">2</span>;
+            }
+        }
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = <span class="hljs-number">3</span>; k &lt;= length; ++k) {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; length - k + <span class="hljs-number">1</span>; ++i) {
+                <span class="hljs-keyword">int</span> j = i + k - <span class="hljs-number">1</span>;
+                <span class="hljs-keyword">if</span> (table[i + <span class="hljs-number">1</span>][j - <span class="hljs-number">1</span>] &amp;&amp; str.charAt(i) == str.charAt(j)) {
+                    table[i][j] = <span class="hljs-keyword">true</span>;
+                    <span class="hljs-keyword">if</span> (k &gt; maxLength) {
+                        start = i;
+                        maxLength = k;
+                    }
+                }
+            }
+        }
+        System.out.print(<span class="hljs-string">"Longest palindrome substring is; "</span>);
+        printSubString(str, start, start + maxLength - <span class="hljs-number">1</span>);
+        <span class="hljs-keyword">return</span> maxLength;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+        String string = handler.nextLine();
+        System.out.println(<span class="hljs-string">"Length is: "</span> + longestPalindromeString(string));
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/NPw7RZL.png" alt="https://i.imgur.com/NPw7RZL.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a Java program to convert a number from decimal to binary.</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DecimalToBinary</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+        System.out.print(<span class="hljs-string">"Enter a number in base 10 : "</span>);
+        System.out.println(<span class="hljs-string">"&gt; "</span> + Integer.toBinaryString(handler.nextInt()));
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/RF0MD1i.png" alt="https://i.imgur.com/RF0MD1i.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a Java program to reverse every words in a sentence.</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">StringReverser</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> String <span class="hljs-title">processString</span><span class="hljs-params">(String str)</span> </span>{
+        <span class="hljs-keyword">char</span> c[] = str.toCharArray();
+        <span class="hljs-keyword">char</span> temp;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; c.length / <span class="hljs-number">2</span>; i += <span class="hljs-number">1</span>) {
+            temp = c[i];
+            c[i] = c[c.length - i - <span class="hljs-number">1</span>];
+            c[c.length - i - <span class="hljs-number">1</span>] = temp;
+        }
+
+        <span class="hljs-keyword">return</span> String.valueOf(c);
+    }
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ReverseEachWord</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">StringReverser</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+        System.out.print(<span class="hljs-string">"Enter a string : "</span>);
+        String string = handler.nextLine();
+
+        System.out.print(<span class="hljs-string">"&gt; "</span>);
+        <span class="hljs-keyword">for</span> (String s : string.split(<span class="hljs-string">" "</span>)) {
+            System.out.print(StringReverser.processString(s) + <span class="hljs-string">" "</span>);
+        }
+        System.out.println();
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/lIPU0Xr.png" alt="https://i.imgur.com/lIPU0Xr.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a Java program to check if two strings are anagrams or not.
+Anagram means that both strings contain the same character set, only their order is
+different. Therefore, in both strings, the frequency of each letter must be the same.
+For example, strings &quot;act&quot; and &quot;cat&quot; are anagrams.</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">ArrayUtil</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">arrayContains</span><span class="hljs-params">(<span class="hljs-keyword">char</span>[] haystack, <span class="hljs-keyword">char</span> needle)</span> </span>{
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">char</span> item : haystack) {
+            <span class="hljs-keyword">if</span> (item == needle) {
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+            }
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">checkAnagram</span><span class="hljs-params">(<span class="hljs-keyword">char</span>[] s1, <span class="hljs-keyword">char</span>[] s2)</span> </span>{
+        <span class="hljs-keyword">if</span> (s1.length != s2.length) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+        }
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">char</span> c : s1) {
+            <span class="hljs-keyword">if</span> (!ArrayUtil.arrayContains(s2, c)) {
+                <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+            }
+        }
+
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+    }
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Anagrams</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">ArrayUtil</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+        System.out.print(<span class="hljs-string">"Enter first string : "</span>);
+        String string1 = handler.nextLine();
+
+        System.out.print(<span class="hljs-string">"Enter second string : "</span>);
+        String string2 = handler.nextLine();
+
+        <span class="hljs-keyword">char</span> str1[] = string1.toCharArray();
+        <span class="hljs-keyword">char</span> str2[] = string2.toCharArray();
+
+        <span class="hljs-keyword">if</span> (ArrayUtil.checkAnagram(str1, str2)) {
+            System.out.println(<span class="hljs-string">"&gt; Strings are Anagram"</span>);
+        } <span class="hljs-keyword">else</span> {
+            System.out.println(<span class="hljs-string">"&gt; Strings are not anagrams"</span>);
+        }
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/UwKdxx0.png" alt="https://i.imgur.com/UwKdxx0.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a Java program to sort a strings in alphabetical order</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+<span class="hljs-keyword">import</span> java.util.Arrays;
+
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">StringUtil</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> String <span class="hljs-title">sort</span><span class="hljs-params">(String string)</span> </span>{
+        <span class="hljs-keyword">return</span> string;
+    }
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SortString</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+        System.out.print(<span class="hljs-string">"Enter the number of strings: "</span>);
+        <span class="hljs-keyword">int</span> items = handler.nextInt();
+        String string[] = <span class="hljs-keyword">new</span> String[items];
+
+        <span class="hljs-comment">/** taking input of data */</span>
+        handler.nextLine();
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; items; i += <span class="hljs-number">1</span>) {
+            System.out.print(<span class="hljs-string">"Enter string "</span> + (i + <span class="hljs-number">1</span>) + <span class="hljs-string">" :"</span>);
+            string[i] = handler.nextLine();
+        }
+
+        Arrays.sort(string);
+
+        <span class="hljs-keyword">for</span> (String s : string) {
+            System.out.println(<span class="hljs-string">"&gt; "</span> + s);
+        }
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/VRcJreh.png" alt="https://i.imgur.com/VRcJreh.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a Java program to check whether the given string is a palindrome or not</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">StringReverser</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> String <span class="hljs-title">processString</span><span class="hljs-params">(String str)</span> </span>{
+        <span class="hljs-keyword">char</span> c[] = str.toCharArray();
+        <span class="hljs-keyword">char</span> temp;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; c.length / <span class="hljs-number">2</span>; i += <span class="hljs-number">1</span>) {
+            temp = c[i];
+            c[i] = c[c.length - i - <span class="hljs-number">1</span>];
+            c[c.length - i - <span class="hljs-number">1</span>] = temp;
+        }
+        <span class="hljs-keyword">return</span> String.valueOf(c);
+    }
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Palindrome</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">StringReverser</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+        System.out.print(<span class="hljs-string">"Enter a string : "</span>);
+        String string = handler.nextLine();
+
+        System.out.println(StringReverser.processString(string));
+
+        <span class="hljs-keyword">if</span> (string.compareTo(StringReverser.processString(string)) == <span class="hljs-number">0</span>) {
+            System.out.println(<span class="hljs-string">"String is palindrome."</span>);
+        } <span class="hljs-keyword">else</span> {
+            System.out.println(<span class="hljs-string">"String is not palindrome"</span>);
+        }
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/AC3yDkw.png" alt="https://i.imgur.com/AC3yDkw.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Program to convert numbers to words</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NumberToWord</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        Scanner handle = <span class="hljs-keyword">new</span> Scanner(System.in);
+        System.out.print(<span class="hljs-string">"Enter a number : "</span>);
+        <span class="hljs-keyword">int</span> number = handle.nextInt();
+
+        NumberToWord converter = <span class="hljs-keyword">new</span> NumberToWord(number);
+        System.out.println(number + <span class="hljs-string">" into words is : "</span> + converter.toWords() + <span class="hljs-string">"."</span>);
+    }
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> number;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span>[] edgeCases;
+
+    NumberToWord(<span class="hljs-keyword">int</span> number) {
+        <span class="hljs-keyword">this</span>.number = number;
+        <span class="hljs-keyword">this</span>.edgeCases = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[] { <span class="hljs-number">0</span>, <span class="hljs-number">10</span> };
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toWords</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">/** when only single number provided */</span>
+        <span class="hljs-keyword">int</span> lengthOfInput = String.valueOf(<span class="hljs-keyword">this</span>.number).length();
+
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.number == <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.toCapital(<span class="hljs-string">"zero"</span>);
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.number &lt; <span class="hljs-number">10</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.toCapital(<span class="hljs-keyword">this</span>.singleDigit(<span class="hljs-keyword">this</span>.number));
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.number &lt; <span class="hljs-number">20</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.toCapital(<span class="hljs-keyword">this</span>.doubleDigit(<span class="hljs-keyword">this</span>.number - <span class="hljs-number">10</span>));
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.number &lt; <span class="hljs-number">100</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.toCapital(<span class="hljs-keyword">this</span>.multipleOfTen(<span class="hljs-keyword">this</span>.number / <span class="hljs-number">10</span>) + <span class="hljs-string">" "</span> + <span class="hljs-keyword">this</span>.singleDigit(<span class="hljs-keyword">this</span>.number % <span class="hljs-number">10</span>));
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.number &lt; <span class="hljs-number">1000</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.toCapital(<span class="hljs-keyword">this</span>.singleDigit(<span class="hljs-keyword">this</span>.number / <span class="hljs-number">100</span>) + <span class="hljs-string">" "</span> + <span class="hljs-keyword">this</span>.powerOfTen(<span class="hljs-number">2</span>) + <span class="hljs-string">" "</span>
+                    + <span class="hljs-keyword">this</span>.multipleOfTen(<span class="hljs-keyword">this</span>.number / <span class="hljs-number">10</span>) + <span class="hljs-string">" "</span> + <span class="hljs-keyword">this</span>.singleDigit(<span class="hljs-keyword">this</span>.number % <span class="hljs-number">10</span>));
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.number &lt; <span class="hljs-number">10000</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.toCapital(<span class="hljs-keyword">this</span>.singleDigit(<span class="hljs-keyword">this</span>.number / <span class="hljs-number">1000</span>) + <span class="hljs-string">" "</span> + <span class="hljs-keyword">this</span>.powerOfTen(<span class="hljs-number">3</span>) + <span class="hljs-string">" "</span>
+                    + <span class="hljs-keyword">this</span>.singleDigit(<span class="hljs-keyword">this</span>.number / <span class="hljs-number">100</span>) + <span class="hljs-string">" "</span> + <span class="hljs-keyword">this</span>.powerOfTen(<span class="hljs-number">2</span>) + <span class="hljs-string">" "</span>
+                    + <span class="hljs-keyword">this</span>.multipleOfTen(<span class="hljs-keyword">this</span>.number / <span class="hljs-number">10</span>) + <span class="hljs-string">" "</span> + <span class="hljs-keyword">this</span>.singleDigit(<span class="hljs-keyword">this</span>.number % <span class="hljs-number">10</span>));
+        }
+
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (lengthOfInput == <span class="hljs-number">2</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.toCapital(<span class="hljs-keyword">this</span>.multipleOfTen(<span class="hljs-keyword">this</span>.number / <span class="hljs-number">10</span>) + <span class="hljs-string">" "</span> + <span class="hljs-keyword">this</span>.singleDigit(<span class="hljs-keyword">this</span>.number % <span class="hljs-number">10</span>));
+        }
+
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"Only 4 digit numbers are allowed"</span>;
+
+    }
+
+    <span class="hljs-function">String <span class="hljs-title">toCapital</span><span class="hljs-params">(String str)</span> </span>{
+        <span class="hljs-keyword">return</span> str.substring(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>).toUpperCase() + str.substring(<span class="hljs-number">1</span>);
+    }
+
+    <span class="hljs-function">String <span class="hljs-title">singleDigit</span><span class="hljs-params">(<span class="hljs-keyword">int</span> digit)</span> </span>{
+        String[] wordList = { <span class="hljs-string">""</span>, <span class="hljs-string">"one"</span>, <span class="hljs-string">"two"</span>, <span class="hljs-string">"three"</span>, <span class="hljs-string">"four"</span>, <span class="hljs-string">"five"</span>, <span class="hljs-string">"six"</span>, <span class="hljs-string">"seven"</span>, <span class="hljs-string">"eight"</span>, <span class="hljs-string">"nine"</span> };
+        <span class="hljs-keyword">return</span> wordList[digit];
+    }
+
+    <span class="hljs-function">String <span class="hljs-title">doubleDigit</span><span class="hljs-params">(<span class="hljs-keyword">int</span> digit)</span> </span>{
+        String[] wordList = { <span class="hljs-string">"ten"</span>, <span class="hljs-string">"eleven"</span>, <span class="hljs-string">"twelve"</span>, <span class="hljs-string">"thirteen"</span>, <span class="hljs-string">"fourteen"</span>, <span class="hljs-string">"fifteen"</span>, <span class="hljs-string">"sixteen"</span>, <span class="hljs-string">"seventeen"</span>,
+                <span class="hljs-string">"eighteen"</span>, <span class="hljs-string">"nineteen"</span> };
+        <span class="hljs-keyword">return</span> wordList[digit];
+    }
+
+    <span class="hljs-function">String <span class="hljs-title">multipleOfTen</span><span class="hljs-params">(<span class="hljs-keyword">int</span> digit)</span> </span>{
+        String[] wordList = { <span class="hljs-string">""</span>, <span class="hljs-string">"ten"</span>, <span class="hljs-string">"twenty"</span>, <span class="hljs-string">"thirty"</span>, <span class="hljs-string">"forty"</span>, <span class="hljs-string">"fifty"</span>, <span class="hljs-string">"sixty"</span>, <span class="hljs-string">"seventy"</span>, <span class="hljs-string">"eighty"</span>, <span class="hljs-string">"ninety"</span> };
+        <span class="hljs-keyword">return</span> wordList[digit];
+    }
+
+    <span class="hljs-function">String <span class="hljs-title">powerOfTen</span><span class="hljs-params">(<span class="hljs-keyword">int</span> power)</span> </span>{
+        String[] wordList = { <span class="hljs-string">""</span>, <span class="hljs-string">""</span>, <span class="hljs-string">"hundred"</span>, <span class="hljs-string">"thousand"</span> };
+        <span class="hljs-keyword">return</span> wordList[power];
+    }
+
+}
+
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/z0HkAHr.png" alt="https://i.imgur.com/z0HkAHr.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a Java program to remove vowels from a string.</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+<span class="hljs-keyword">import</span> java.util.Arrays;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">VowelRemover</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        System.out.print(<span class="hljs-string">"Enter a string: "</span>);
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+        String string = handler.nextLine();
+
+        String[] vowels = { <span class="hljs-string">"a"</span>, <span class="hljs-string">"e"</span>, <span class="hljs-string">"i"</span>, <span class="hljs-string">"o"</span>, <span class="hljs-string">"u"</span>, <span class="hljs-string">"A"</span>, <span class="hljs-string">"E"</span>, <span class="hljs-string">"I"</span>, <span class="hljs-string">"O"</span>, <span class="hljs-string">"U"</span> };
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; vowels.length; i++) {
+            string = string.replace(vowels[i], <span class="hljs-string">""</span>);
+        }
+
+        System.out.println(<span class="hljs-string">"New String : "</span> + string);
+    }
+
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/V9KSHXM.png" alt="https://i.imgur.com/V9KSHXM.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a Java program to check whether a number is palindrome or not</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">OddAndEvenValues</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+        System.out.print(<span class="hljs-string">"Enter number of elements : "</span>);
+        <span class="hljs-keyword">int</span> items = handler.nextInt();
+        <span class="hljs-keyword">int</span> data[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[items];
+
+        System.out.print(<span class="hljs-string">"Enter "</span> + items + <span class="hljs-string">" items : "</span>);
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; items; i += <span class="hljs-number">1</span>) {
+            data[i] = handler.nextInt();
+        }
+        System.out.println();
+
+        System.out.println(<span class="hljs-string">"Displaying even positioned values : "</span>);
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; items; i += <span class="hljs-number">2</span>) {
+            System.out.print(data[i] + <span class="hljs-string">" "</span>);
+        }
+        System.out.println();
+
+        System.out.println(<span class="hljs-string">"Displaying odd positioned values : "</span>);
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; items; i += <span class="hljs-number">2</span>) {
+            System.out.print(data[i] + <span class="hljs-string">" "</span>);
+        }
+        System.out.println();
+
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/NXI1bdE.png" alt="https://i.imgur.com/NXI1bdE.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a Java program to print the odd and even values in an array</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">StringReverser</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> String <span class="hljs-title">processString</span><span class="hljs-params">(String str)</span> </span>{
+        <span class="hljs-keyword">char</span> c[] = str.toCharArray();
+        <span class="hljs-keyword">char</span> temp;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; c.length / <span class="hljs-number">2</span>; i += <span class="hljs-number">1</span>) {
+            temp = c[i];
+            c[i] = c[c.length - i - <span class="hljs-number">1</span>];
+            c[c.length - i - <span class="hljs-number">1</span>] = temp;
+        }
+        <span class="hljs-keyword">return</span> String.valueOf(c);
+    }
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NumberPalindromeOrNot</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">StringReverser</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+        System.out.print(<span class="hljs-string">"Enter a number : "</span>);
+        String string = handler.nextLine();
+
+        System.out.println(StringReverser.processString(string));
+
+        <span class="hljs-keyword">if</span> (string.compareTo(StringReverser.processString(string)) == <span class="hljs-number">0</span>) {
+            System.out.println(<span class="hljs-string">"Number is palindrome."</span>);
+        } <span class="hljs-keyword">else</span> {
+            System.out.println(<span class="hljs-string">"Number is not palindrome"</span>);
+        }
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/7rdj6qz.png" alt="https://i.imgur.com/7rdj6qz.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a Java program to remove the duplicate elements of a given array and return the new
+length of the array</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RemoveDuplicate</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">removeDuplicateElements</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[], <span class="hljs-keyword">int</span> n)</span> </span>{
+        <span class="hljs-keyword">if</span> (n == <span class="hljs-number">0</span> || n == <span class="hljs-number">1</span>) {
+            <span class="hljs-keyword">return</span> n;
+        }
+        <span class="hljs-keyword">int</span>[] temp = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n];
+        <span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n - <span class="hljs-number">1</span>; i++) {
+            <span class="hljs-keyword">if</span> (arr[i] != arr[i + <span class="hljs-number">1</span>]) {
+                temp[j++] = arr[i];
+            }
+        }
+        temp[j++] = arr[n - <span class="hljs-number">1</span>];
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; j; i++) {
+            arr[i] = temp[i];
+        }
+        <span class="hljs-keyword">return</span> j;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+        System.out.print(<span class="hljs-string">"Enter number of elements : "</span>);
+        <span class="hljs-keyword">int</span> items = handler.nextInt();
+        <span class="hljs-keyword">int</span> data[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[items];
+
+        System.out.print(<span class="hljs-string">"Enter items : "</span>);
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; items; i += <span class="hljs-number">1</span>) {
+            data[i] = handler.nextInt();
+        }
+
+        <span class="hljs-keyword">int</span> length = removeDuplicateElements(data, data.length);
+
+        System.out.println(<span class="hljs-string">"New Length : "</span> + length);
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; length; i++) {
+            System.out.print(data[i] + <span class="hljs-string">" "</span>);
+        }
+        System.out.println();
+
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/nS1x7gv.png" alt="https://i.imgur.com/nS1x7gv.png"></p>
+<h2 id="question">Question</h2>
+<p>Write a Java Program to read the number and check whether it is divisible by 3 and 5.</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DivisibleBy3And5</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+        System.out.print(<span class="hljs-string">"Enter the number : "</span>);
+        <span class="hljs-keyword">int</span> n = handler.nextInt();
+
+        <span class="hljs-keyword">if</span> (n % <span class="hljs-number">5</span> == <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">if</span> (n % <span class="hljs-number">3</span> == <span class="hljs-number">0</span>) {
+                System.out.println(<span class="hljs-string">"Number is divided by 3 and 5"</span>);
+            } <span class="hljs-keyword">else</span> {
+                System.out.println(<span class="hljs-string">"Number is not divided by 3 and 5"</span>);
+            }
+        } <span class="hljs-keyword">else</span> {
+            System.out.println(<span class="hljs-string">"Number is not divided by 3 and 5"</span>);
+        }
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/Mwh65FE.png" alt="https://i.imgur.com/Mwh65FE.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a Java program to print the third largest number in an array</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Arrays;
+<span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ThirdLargestElement</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+        System.out.print(<span class="hljs-string">"Enter the number of elements : "</span>);
+        <span class="hljs-keyword">int</span> items = handler.nextInt();
+        <span class="hljs-keyword">int</span> data[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[items];
+
+        System.out.print(<span class="hljs-string">"Enter the elements : "</span>);
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; items; i += <span class="hljs-number">1</span>) {
+            data[i] = handler.nextInt();
+        }
+
+        Arrays.sort(data);
+        System.out.println(<span class="hljs-string">"Third Largest Element is : "</span> + data[data.length - <span class="hljs-number">4</span>]);
+
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/mzx1ZjI.png" alt="https://i.imgur.com/mzx1ZjI.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a Java program to print the pascal triangle</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PascalTriangle</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">factorial</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>{
+        <span class="hljs-keyword">int</span> f;
+        <span class="hljs-keyword">for</span> (f = <span class="hljs-number">1</span>; n &gt; <span class="hljs-number">1</span>; n--) {
+            f *= n;
+        }
+        <span class="hljs-keyword">return</span> f;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">ncr</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n, <span class="hljs-keyword">int</span> r)</span> </span>{
+        <span class="hljs-keyword">return</span> factorial(n) / (factorial(n - r) * factorial(r));
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        Scanner sc = <span class="hljs-keyword">new</span> Scanner(System.in);
+        System.out.print(<span class="hljs-string">"Enter limit for triangle : "</span>);
+        <span class="hljs-keyword">int</span> n = sc.nextInt();
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt;= n; i++) {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt;= n - i; j++) {
+                System.out.print(<span class="hljs-string">" "</span>);
+            }
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt;= i; j++) {
+                System.out.print(<span class="hljs-string">" "</span> + ncr(i, j));
+            }
+            System.out.println();
+        }
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/GMYOlqq.png" alt="https://i.imgur.com/GMYOlqq.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a Java program to print the floyds triangle</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FloydTriangle</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        <span class="hljs-keyword">int</span> n;
+        <span class="hljs-keyword">int</span> number = <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">int</span> i, j;
+        Scanner in = <span class="hljs-keyword">new</span> Scanner(System.in);
+        System.out.print(<span class="hljs-string">"Enter limit for pattern : "</span>);
+        n = in.nextInt();
+        <span class="hljs-keyword">for</span> (i = <span class="hljs-number">1</span>; i &lt;= n; i++) {
+            <span class="hljs-keyword">for</span> (j = <span class="hljs-number">1</span>; j &lt;= i; j++) {
+                System.out.print((number++) + <span class="hljs-string">"\t"</span>);
+            }
+            System.out.println();
+        }
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/RXrlJDl.png" alt="https://i.imgur.com/RXrlJDl.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a Java program to sort an array of positive integers of an given array, in the sorted array the value of the first element should be maximum, second value should be minimum value, third should be second maximum, fourth second be second minimum and so on.</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+<span class="hljs-keyword">import</span> java.util.Arrays;
+<span class="hljs-keyword">import</span> java.util.Collections;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AlternateOrder</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+
+        System.out.print(<span class="hljs-string">"Enter number of elements : "</span>);
+        <span class="hljs-keyword">int</span> items = handler.nextInt();
+        <span class="hljs-keyword">int</span> data[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[items];
+        System.out.print(<span class="hljs-string">"Enter "</span> + items + <span class="hljs-string">" values : "</span>);
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; items; i++) {
+            data[i] = handler.nextInt();
+        }
+
+        Collections.sort(Arrays.asList(data), Collections.reverseOrder());
+
+        <span class="hljs-keyword">int</span>[] finalArr = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[data.length];
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; data.length; i += <span class="hljs-number">2</span>) {
+            finalArr[i] = data[i];
+            finalArr[i + <span class="hljs-number">1</span>] = data[data.length - i - <span class="hljs-number">1</span>];
+        }
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; finalArr.length; i++) {
+            System.out.println(finalArr[i]);
+        }
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/77YZ3CZ.png" alt="https://i.imgur.com/77YZ3CZ.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a Java program to separate even and odd numbers of an given array of integers. Put all
+even numbers first, and then odd numbers.</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">OddEvenSeparator</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+        System.out.print(<span class="hljs-string">"Enter number of elements : "</span>);
+        <span class="hljs-keyword">int</span> n = handler.nextInt();
+        <span class="hljs-keyword">int</span> a[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n];
+        <span class="hljs-keyword">int</span> b[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n];
+        <span class="hljs-keyword">int</span> odd = n - <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">int</span> even = <span class="hljs-number">0</span>;
+
+        System.out.print(<span class="hljs-string">"Enter elements of array : "</span>);
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+            a[i] = handler.nextInt();
+        }
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+            <span class="hljs-keyword">if</span> (a[i] % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>) {
+                b[even] = a[i];
+                even++;
+            } <span class="hljs-keyword">else</span> {
+                b[odd] = a[i];
+                odd--;
+            }
+        }
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) {
+            System.out.print(b[i] + <span class="hljs-string">" "</span>);
+        }
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/WaNydzo.png" alt="https://i.imgur.com/WaNydzo.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Java program generates random numbers within the provided range.</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+<span class="hljs-keyword">import</span> java.util.Random;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RandomNumbersInGivenRange</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        Random random = <span class="hljs-keyword">new</span> Random();
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+        System.out.print(<span class="hljs-string">"Enter max range : "</span>);
+        <span class="hljs-keyword">int</span> maxRange = handler.nextInt();
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">10</span>; i++) {
+            System.out.println(<span class="hljs-string">"&gt; "</span> + random.nextInt(maxRange));
+        }
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/QXAkhCI.png" alt="https://i.imgur.com/QXAkhCI.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a Java Program to generate the random number between the ranges.</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RandomNumberBetweenGivenRange</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+        System.out.print(<span class="hljs-string">"Enter starting range : "</span>);
+
+        <span class="hljs-keyword">int</span> lowerRange = handler.nextInt();
+        System.out.print(<span class="hljs-string">"Enter final range : "</span>);
+        <span class="hljs-keyword">int</span> upperRange = handler.nextInt();
+        <span class="hljs-keyword">int</span> randomNumber = lowerRange + (<span class="hljs-keyword">int</span>) (Math.random() * ((upperRange - lowerRange) + <span class="hljs-number">1</span>));
+        System.out.println(<span class="hljs-string">"Random number between given range : "</span> + randomNumber);
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/SMkX5SP.png" alt="https://i.imgur.com/SMkX5SP.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Java program to reverse a number.</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ReverseNumber</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+        <span class="hljs-keyword">int</span> temp;
+        <span class="hljs-keyword">int</span> number;
+        <span class="hljs-keyword">int</span> number2 = <span class="hljs-number">0</span>;
+        System.out.print(<span class="hljs-string">"Enter a number : "</span>);
+        number = handler.nextInt();
+
+        <span class="hljs-keyword">while</span> (number != <span class="hljs-number">0</span>) {
+            temp = number % <span class="hljs-number">10</span>;
+            number2 = number2 * <span class="hljs-number">10</span> + temp;
+            number = number / <span class="hljs-number">10</span>;
+        }
+        System.out.println(<span class="hljs-string">"Reversed Number is "</span> + number2);
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/OvcxRfa.png" alt="https://i.imgur.com/OvcxRfa.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a Java program to convert a binary number to decimal number and to
+decimal number to binary number</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BaseConversion</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+        System.out.print(<span class="hljs-string">"Enter binary number : "</span>);
+        <span class="hljs-keyword">long</span> number1 = handler.nextLong();
+        <span class="hljs-keyword">int</span> decimal = convertBinaryToDecimal(number1);
+        System.out.printf(<span class="hljs-string">"%d in binary = %d in decimal"</span>, number1, decimal);
+
+        System.out.print(<span class="hljs-string">"\nEnter Decimal number : "</span>);
+        <span class="hljs-keyword">int</span> number2 = handler.nextInt();
+        <span class="hljs-keyword">long</span> binary = convertDecimalToBinary(number2);
+        System.out.printf(<span class="hljs-string">"%d in decimal = %d in binary"</span>, number2, binary);
+        System.out.println(<span class="hljs-string">""</span>);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">convertBinaryToDecimal</span><span class="hljs-params">(<span class="hljs-keyword">long</span> num)</span> </span>{
+        <span class="hljs-keyword">int</span> decimalNumber = <span class="hljs-number">0</span>, i = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">long</span> remainder;
+        <span class="hljs-keyword">while</span> (num != <span class="hljs-number">0</span>) {
+            remainder = num % <span class="hljs-number">10</span>;
+            num = num / <span class="hljs-number">10</span>;
+            decimalNumber += remainder * Math.pow(<span class="hljs-number">2</span>, i);
+            ++i;
+        }
+        <span class="hljs-keyword">return</span> decimalNumber;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">long</span> <span class="hljs-title">convertDecimalToBinary</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>{
+        <span class="hljs-keyword">long</span> binaryNumber = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">int</span> remainder, i = <span class="hljs-number">1</span>;
+
+        <span class="hljs-keyword">while</span> (n != <span class="hljs-number">0</span>) {
+            remainder = n % <span class="hljs-number">2</span>;
+            n = n / <span class="hljs-number">2</span>;
+            binaryNumber += remainder * i;
+            i = i * <span class="hljs-number">10</span>;
+        }
+        <span class="hljs-keyword">return</span> binaryNumber;
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/WEmN9mm.png" alt="https://i.imgur.com/WEmN9mm.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a Java program to create and display unique three-digit number using 1,
+2, 3, 4. Also count how many three-digit numbers are there.</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UniqueThreeDigits</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-keyword">int</span> temp = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">4</span>; i++) {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>; j &lt;= <span class="hljs-number">4</span>; j++) {
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = <span class="hljs-number">1</span>; k &lt;= <span class="hljs-number">4</span>; k++) {
+                    <span class="hljs-keyword">if</span> (k != i &amp;&amp; k != j &amp;&amp; i != j) {
+                        temp++;
+                        System.out.println(i + <span class="hljs-string">""</span> + j + <span class="hljs-string">""</span> + k);
+                    }
+                }
+            }
+        }
+        System.out.println(<span class="hljs-string">"Total number of the three digit number is "</span> + temp);
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/APhF4Xr.png" alt="https://i.imgur.com/APhF4Xr.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a Java program that accepts an integer (n) and computes the value of
+n+nn+nnn.</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FormulaQuestion</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+        System.out.print(<span class="hljs-string">"Enter n to calculate n + nn + nnn : "</span>);
+        <span class="hljs-keyword">int</span> n = handler.nextInt();
+        System.out.println(<span class="hljs-string">"&gt; "</span> + (n + n * n + n * n * n));
+
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/f4NNCm9.png" alt="https://i.imgur.com/f4NNCm9.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a program to display system time</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.text.SimpleDateFormat;
+<span class="hljs-keyword">import</span> java.util.Calendar;
+<span class="hljs-keyword">import</span> java.util.TimeZone;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DisplaySystemTime</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        System.out.println(<span class="hljs-string">"Displaying Current Time"</span>);
+        SimpleDateFormat format = <span class="hljs-keyword">new</span> SimpleDateFormat(<span class="hljs-string">"yyyy/MM/dd HH:mm:ss"</span>);
+        format.setCalendar(Calendar.getInstance(TimeZone.getTimeZone(<span class="hljs-string">"IST"</span>)));
+
+        System.out.println(<span class="hljs-string">"Now: "</span> + format.format(System.currentTimeMillis()));
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/8Ez5i7x.png" alt="https://i.imgur.com/8Ez5i7x.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a Java program to calculate the sum of two integers and return true if
+the sum is equal to a third integer.</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SumOfTwoEqualToThird</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+        System.out.println(<span class="hljs-string">"Enter three Numbers :"</span>);
+        System.out.print(<span class="hljs-string">"Enter first Number : "</span>);
+        <span class="hljs-keyword">int</span> first = handler.nextInt();
+        System.out.print(<span class="hljs-string">"Enter second Number : "</span>);
+        <span class="hljs-keyword">int</span> second = handler.nextInt();
+        System.out.print(<span class="hljs-string">"Enter third Number : "</span>);
+        <span class="hljs-keyword">int</span> third = handler.nextInt();
+
+        <span class="hljs-keyword">if</span> (first + second == third || second + third == first || third + first == second) {
+            System.out.println(<span class="hljs-string">"Yes"</span>);
+        } <span class="hljs-keyword">else</span> {
+            System.out.println(<span class="hljs-string">"No"</span>);
+        }
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/9bwEA4s.png" alt="https://i.imgur.com/9bwEA4s.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a Java program that accepts three integers from the user and return true
+if the second number is greater than first number and third number is greater
+than second number. If &quot;abc&quot; is true second number does not need to be
+greater than first number.</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NumberOrder</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+        System.out.println(<span class="hljs-string">"Enter three Numbers :"</span>);
+        System.out.print(<span class="hljs-string">"Enter first Number : "</span>);
+        <span class="hljs-keyword">int</span> first = handler.nextInt();
+        System.out.print(<span class="hljs-string">"Enter second Number : "</span>);
+        <span class="hljs-keyword">int</span> second = handler.nextInt();
+        System.out.print(<span class="hljs-string">"Enter third Number : "</span>);
+        <span class="hljs-keyword">int</span> third = handler.nextInt();
+
+        System.out.println(<span class="hljs-string">"The result is "</span> + (first &lt; second &amp;&amp; second &lt; third));
+
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/GJO7pHw.png" alt="https://i.imgur.com/GJO7pHw.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a Java program to test if the first and the last element of an array of
+integers are same. The length of the array must be greater than or equal to 2.
+Test Data: array = <code>50, -20, 0, 30, 40, 60, 10</code>
+Sample Output: <code>False</code></p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FirstAndLastOfTwoArr</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+        System.out.print(<span class="hljs-string">"Enter number of elements in array 1 : "</span>);
+        <span class="hljs-keyword">int</span> items1 = handler.nextInt();
+        <span class="hljs-keyword">int</span> data1[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[items1];
+        System.out.println(<span class="hljs-string">"Enter "</span> + items1 + <span class="hljs-string">" values : "</span>);
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; items1; i++) {
+            data1[i] = handler.nextInt();
+        }
+
+        System.out.print(<span class="hljs-string">"Enter number of elements in array 2 : "</span>);
+        <span class="hljs-keyword">int</span> items = handler.nextInt();
+        <span class="hljs-keyword">int</span> data[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[items];
+        System.out.println(<span class="hljs-string">"Enter "</span> + items + <span class="hljs-string">" values : "</span>);
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; items; i++) {
+            data[i] = handler.nextInt();
+        }
+
+        System.out.println(<span class="hljs-string">"Starting elements of both array are same: "</span> + (data[<span class="hljs-number">0</span>] == data1[<span class="hljs-number">0</span>]));
+        System.out.println(<span class="hljs-string">"Last elements of both array are same: "</span> + (data[items - <span class="hljs-number">1</span>] == data1[items1 - <span class="hljs-number">1</span>]));
+        System.out.println(<span class="hljs-string">"First element of first array is equal to last element of second array : "</span>
+                + (data1[<span class="hljs-number">0</span>] == data[items - <span class="hljs-number">1</span>]));
+        System.out.println(<span class="hljs-string">"Last element of first array is equal to first element of second array : "</span>
+                + (data1[items1 - <span class="hljs-number">1</span>] == data[<span class="hljs-number">0</span>]));
+
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/21x841k.png" alt="https://i.imgur.com/21x841k.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a Java program to create a new array of length 2 from two arrays of
+integers with three elements and the new array will contain the first and last
+elements from the two arrays
+Test Data:</p>
+<pre class="hljs"><code><div>array1 = 50, -20, 0
+array2 = 5, -50, 10
+</div></code></pre>
+<p>Sample Output:</p>
+<pre class="hljs"><code><div>Array1: [50, -20, 0]
+Array2: [5, -50, 10]
+New Array: [50, 10]
+</div></code></pre>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NewArrContainingFirstAndLast</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+        System.out.print(<span class="hljs-string">"Enter number of elements in array 1 : "</span>);
+        <span class="hljs-keyword">int</span> items1 = handler.nextInt();
+        <span class="hljs-keyword">int</span> data1[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[items1];
+        System.out.println(<span class="hljs-string">"Enter "</span> + items1 + <span class="hljs-string">" values : "</span>);
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; items1; i++) {
+            data1[i] = handler.nextInt();
+        }
+
+        System.out.print(<span class="hljs-string">"Enter number of elements in array 2 : "</span>);
+        <span class="hljs-keyword">int</span> items = handler.nextInt();
+        <span class="hljs-keyword">int</span> data[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[items];
+        System.out.println(<span class="hljs-string">"Enter "</span> + items + <span class="hljs-string">" values : "</span>);
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; items; i++) {
+            data[i] = handler.nextInt();
+        }
+
+        <span class="hljs-keyword">int</span> finalArr[] = { data1[<span class="hljs-number">0</span>], data[items - <span class="hljs-number">1</span>] };
+        System.out.println(<span class="hljs-string">"First element of new arr : "</span> + finalArr[<span class="hljs-number">0</span>]);
+        System.out.println(<span class="hljs-string">"Second element of new arr : "</span> + finalArr[<span class="hljs-number">1</span>]);
+
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/Kmp6c8B.png" alt="https://i.imgur.com/Kmp6c8B.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a Java program to test that a given array of integers of length 2
+contains a 4 or a 7.</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ContainsTwoOrSeven</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+        <span class="hljs-keyword">int</span> data[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">2</span>];
+        System.out.print(<span class="hljs-string">"Enter first number : "</span>);
+        <span class="hljs-keyword">int</span> first = handler.nextInt();
+        System.out.print(<span class="hljs-string">"Enter second number : "</span>);
+        <span class="hljs-keyword">int</span> second = handler.nextInt();
+
+        data[<span class="hljs-number">0</span>] = first;
+        data[<span class="hljs-number">1</span>] = second;
+
+        <span class="hljs-keyword">if</span> (data[<span class="hljs-number">0</span>] == <span class="hljs-number">4</span> || data[<span class="hljs-number">0</span>] == <span class="hljs-number">7</span> || data[<span class="hljs-number">1</span>] == <span class="hljs-number">4</span> || data[<span class="hljs-number">1</span>] == <span class="hljs-number">7</span>) {
+            System.out.println(<span class="hljs-string">"True"</span>);
+        } <span class="hljs-keyword">else</span> {
+            System.out.println(<span class="hljs-string">"False"</span>);
+        }
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/E5oDxe3.png" alt="https://i.imgur.com/E5oDxe3.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a Java program to rotate an array (length 3) of integers in left direction</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ArrayRotation</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+        <span class="hljs-keyword">int</span>[] a;
+        <span class="hljs-keyword">int</span> temp;
+        a = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">3</span>];
+
+        System.out.println(<span class="hljs-string">"Enter three of array : "</span>);
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
+            a[i] = handler.nextInt();
+        }
+
+        System.out.print(<span class="hljs-string">"Original Array : ["</span>);
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
+            <span class="hljs-keyword">if</span> (i != <span class="hljs-number">2</span>) {
+                System.out.print(a[i] + <span class="hljs-string">","</span>);
+            } <span class="hljs-keyword">else</span> {
+                System.out.println(a[i] + <span class="hljs-string">"]"</span>);
+            }
+        }
+
+        temp = a[<span class="hljs-number">0</span>];
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">2</span>; i++) {
+            a[i] = a[i + <span class="hljs-number">1</span>];
+        }
+        a[<span class="hljs-number">2</span>] = temp;
+        System.out.print(<span class="hljs-string">"Rotated Array : ["</span>);
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++) {
+            <span class="hljs-keyword">if</span> (i != <span class="hljs-number">2</span>) {
+                System.out.print(a[i] + <span class="hljs-string">","</span>);
+            } <span class="hljs-keyword">else</span> {
+                System.out.println(a[i] + <span class="hljs-string">"]"</span>);
+            }
+        }
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/QUEmkLW.png" alt="https://i.imgur.com/QUEmkLW.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a Java program to get the larger value between first and last element of
+an array (length 3) of integers .</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LargestValueOfArray</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+        <span class="hljs-keyword">int</span> items = <span class="hljs-number">3</span>;
+        <span class="hljs-keyword">int</span> data[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[items];
+        System.out.println(<span class="hljs-string">"Enter "</span> + items + <span class="hljs-string">" values : "</span>);
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; items; i++) {
+            data[i] = handler.nextInt();
+        }
+
+        <span class="hljs-keyword">if</span> (data[<span class="hljs-number">0</span>] &gt; data[<span class="hljs-number">2</span>]) {
+            System.out.println(data[<span class="hljs-number">0</span>] + <span class="hljs-string">" is greater than "</span> + data[<span class="hljs-number">2</span>]);
+        } <span class="hljs-keyword">else</span> {
+            System.out.println(data[<span class="hljs-number">2</span>] + <span class="hljs-string">" is greater than "</span> + data[<span class="hljs-number">0</span>]);
+        }
+
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/MVaSEyA.png" alt="https://i.imgur.com/MVaSEyA.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a Java program to swap the first and last elements of an array (length
+must be at least 1) and create a new array.</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SwapFirstAndLast</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+        System.out.print(<span class="hljs-string">"Enter number of elements : "</span>);
+        <span class="hljs-keyword">int</span> items = handler.nextInt();
+        <span class="hljs-keyword">int</span> data[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[items];
+        System.out.println(<span class="hljs-string">"Enter "</span> + items + <span class="hljs-string">" values : "</span>);
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; items; i++) {
+            data[i] = handler.nextInt();
+        }
+
+        <span class="hljs-keyword">int</span> newArray[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[items];
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; items; i += <span class="hljs-number">1</span>) {
+            newArray[i] = data[i];
+        }
+
+        newArray[<span class="hljs-number">0</span>] = data[items - <span class="hljs-number">1</span>];
+        newArray[items - <span class="hljs-number">1</span>] = data[<span class="hljs-number">0</span>];
+
+        System.out.print(<span class="hljs-string">"["</span>);
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i : newArray) {
+            System.out.print(i + <span class="hljs-string">" "</span>);
+        }
+        System.out.println(<span class="hljs-string">"]"</span>);
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<h2 id="httpsiimgurcom6ptqfmkpng"><img src="https://i.imgur.com/6PTqfMK.png" alt="https://i.imgur.com/6PTqfMK.png"></h2>
+<h2 id="question">Question</h2>
+<p>Write a Java program to find the largest element between first, last, and
+middle values from an array of integers (even length).</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FirstLastAndMiddle</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+        System.out.print(<span class="hljs-string">"Enter number of elements : "</span>);
+        <span class="hljs-keyword">int</span> items = handler.nextInt();
+
+        <span class="hljs-comment">/** ensure only even length */</span>
+        <span class="hljs-keyword">while</span> (items % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>) {
+            System.out.println(<span class="hljs-string">"Enter an odd length."</span>);
+            items = handler.nextInt();
+        }
+
+        <span class="hljs-keyword">int</span> data[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[items];
+        System.out.println(<span class="hljs-string">"Enter "</span> + items + <span class="hljs-string">" values : "</span>);
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; items; i++) {
+            data[i] = handler.nextInt();
+        }
+
+        <span class="hljs-keyword">int</span> middle = data[items / <span class="hljs-number">2</span>];
+        <span class="hljs-keyword">if</span> (data[<span class="hljs-number">0</span>] &gt; middle) {
+            <span class="hljs-keyword">if</span> (data[<span class="hljs-number">0</span>] &gt; data[items - <span class="hljs-number">1</span>]) {
+                System.out.println(<span class="hljs-string">"&gt; "</span> + data[<span class="hljs-number">0</span>] + <span class="hljs-string">" is largest."</span>);
+            } <span class="hljs-keyword">else</span> {
+                System.out.println(<span class="hljs-string">"&gt; "</span> + data[items - <span class="hljs-number">1</span>] + <span class="hljs-string">" is largest."</span>);
+            }
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">if</span> (middle &gt; data[items - <span class="hljs-number">1</span>]) {
+                System.out.println(<span class="hljs-string">"&gt; "</span> + middle + <span class="hljs-string">" is largest."</span>);
+            } <span class="hljs-keyword">else</span> {
+                System.out.println(<span class="hljs-string">"&gt; "</span> + data[items - <span class="hljs-number">1</span>] + <span class="hljs-string">" is largest."</span>);
+            }
+        }
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/JcBUw2a.png" alt="https://i.imgur.com/JcBUw2a.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a Java program to multiply corresponding elements of two arrays of
+integers.</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div><span class="hljs-keyword">import</span> java.util.Scanner;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MultiplyCorrespondingArray</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span> </span>{
+        Scanner handler = <span class="hljs-keyword">new</span> Scanner(System.in);
+        System.out.print(<span class="hljs-string">"Enter number of elements : "</span>);
+        <span class="hljs-keyword">int</span> items = handler.nextInt();
+        <span class="hljs-keyword">int</span> data[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[items];
+        System.out.println(<span class="hljs-string">"Enter "</span> + items + <span class="hljs-string">" values : "</span>);
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; items; i++) {
+            data[i] = handler.nextInt();
+        }
+
+        <span class="hljs-keyword">int</span> data2[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[items];
+        System.out.println(<span class="hljs-string">"Enter values of second array : "</span>);
+        System.out.println(<span class="hljs-string">"Enter "</span> + items + <span class="hljs-string">" values : "</span>);
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; items; i++) {
+            data2[i] = handler.nextInt();
+        }
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; data.length; i += <span class="hljs-number">1</span>) {
+            System.out.println(<span class="hljs-string">"&gt; "</span> + data[i] + <span class="hljs-string">" * "</span> + data2[i] + <span class="hljs-string">" = "</span> + data[i] * data2[i]);
+        }
+    }
+}
+</div></code></pre>
+<h4 id="output">Output</h4>
+<p><img src="https://i.imgur.com/y10z7Pc.png" alt="https://i.imgur.com/y10z7Pc.png"></p>
+<hr>
+<h2 id="question">Question</h2>
+<p>Write a program to demonstrate the knowledge of students in multidimensional arrays
+and looping constructs.
+Eg., If there are 4 batches in BTech - “CSE1007” course, read the count of the slow
+learners (who have scored &lt;25) in each batch. Tutors should be assigned in the ratio of
+1:4 (For every 4 slow learners, there should be one tutor). Determine the number of
+tutors for each batch. Create a 2-D jagged array with 4 rows to store the count of slow
+learners in the 4 batches. The number of columns in each row should be equal to the
+number of groups formed for that particular batch ( Eg., If there are 23 slow learners in
+a batch, then there should be 6 tutors and in the jagged array, the corresponding row
+should store 4, 4, 4, 4, 4,3). Use for-each loop to traverse the array and print the details.
+Also print the number of batches in which all tutors have exactly 4 students.</p>
+<h4 id="code">Code</h4>
+<pre class="hljs"><code><div>
+</div></code></pre>
+<h4 id="output">Output</h4>
+<hr>
+
+</body>
+</html>
