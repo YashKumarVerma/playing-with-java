@@ -5,6 +5,7 @@
  * Also show the data from the database.
  */
 
+/** libraries for javafx */
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -17,7 +18,7 @@ import javafx.geometry.Insets;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
-// database requirements
+/** libraries for database **/
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -26,8 +27,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.plaf.ActionMapUIResource;
-
+/** class to handle all database operations */
 class DatabaseWorker {
 
     private final String url = "jdbc:mysql://localhost:3306/java_db";
@@ -36,6 +36,7 @@ class DatabaseWorker {
     private Connection connection = null;
     private Statement statement = null;
 
+    /** constructor to create a connection and store */
     public DatabaseWorker() {
         try {
             System.out.println("Connecting to database");
@@ -50,6 +51,7 @@ class DatabaseWorker {
         }
     }
 
+    /** function to insert a new user into database */
     public boolean insertUser(String name, String regNo, String mobile, int age) {
         try {
             final String sqlQuery = "INSERT INTO users VALUES ('" + name + "','" + regNo + "', '" + mobile + "'," + age
@@ -67,6 +69,7 @@ class DatabaseWorker {
         }
     }
 
+    /** function to return all user details as 2d array of strings */
     public String[][] getAllUsers() {
         try {
             final String sqlQuery = "SELECT * FROM users WHERE 1";
@@ -104,35 +107,41 @@ class DatabaseWorker {
     }
 }
 
+/** Application to handle UI */
 public class App extends Application {
+
+    /** create new database connection and save as data member */
     public static DatabaseWorker databaseWorker = new DatabaseWorker();
 
+    /** launch the UI */
     public static void main(String[] args) {
+        System.out.println("Starting UI suite");
         launch(args);
     }
 
     /** initialize application on init override */
     @Override
     public void init() {
-        System.out.println("Initializing UI ");
+        System.out.println("Launching UI");
     }
 
     /** perform cleanup and release resources */
     @Override
     public void stop() {
-        System.out.println("Wrapping up gui");
+        System.out.println("Wrapping up UI");
     }
 
     /** describe the application UI and functionality */
     @Override
     public void start(Stage primaryStage) throws Exception {
+        /** UI frame with padding */
         BorderPane root = new BorderPane();
         root.setPadding(new Insets(10, 10, 10, 10));
 
         final Label titleLabel = new Label("Enter details of user : ");
         root.setTop(titleLabel);
 
-        // Create a GridPane in the center of the BorderPane
+        /** Create a GridPane in the center of the BorderPane */
         GridPane center = new GridPane();
         center.setVgap(5);
         center.setHgap(5);
@@ -162,24 +171,23 @@ public class App extends Application {
         center.add(ageInputFieldLabel, 0, 3);
         center.add(ageInputField, 1, 3);
 
+        /** creating labels to show data to user */
         Label ResultLabel = new Label("");
-        root.setBottom(ResultLabel);
-
         Label OutputLabel = new Label("Output");
-
+        root.setBottom(ResultLabel);
         center.add(ResultLabel, 0, 6);
         center.add(OutputLabel, 0, 7);
 
-        // describe button to add user
+        /** describe button to add user */
         Button AddUserButton = new Button("Save User");
         center.add(AddUserButton, 0, 5);
         root.setCenter(center);
 
-        // describe button to load users
+        /** describe button to load users */
         Button ShowUserButton = new Button("Load Data");
         center.add(ShowUserButton, 1, 5);
 
-        // Set the event handler when the button is clicked
+        /** binding event handler to AddUserButton */
         AddUserButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -198,6 +206,7 @@ public class App extends Application {
             }
         });
 
+        /** binding event handler to ShowUserButton */
         ShowUserButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -213,6 +222,7 @@ public class App extends Application {
             }
         });
 
+        /** set application size, title and display to user */
         Scene scene = new Scene(root, 600, 200);
         primaryStage.setTitle("User Interaction | 19BCE2669");
         primaryStage.setScene(scene);
