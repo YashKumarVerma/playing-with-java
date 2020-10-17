@@ -41,7 +41,7 @@ class DatabaseWorker {
             this.statement = connection.createStatement();
             System.out.println("Database connected");
 
-        } catch (Exceptiosn e) {
+        } catch (Exception e) {
             System.out.print(e.getStackTrace());
             System.out.print(e);
             System.out.println("Error connecting to database;");
