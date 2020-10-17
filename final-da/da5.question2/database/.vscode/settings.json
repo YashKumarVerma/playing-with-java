@@ -1,6 +1,0 @@
-{
-    "java.project.referencedLibraries": [
-        "lib/**/*.jar",
-        "/home/yash/Desktop/files/works/projects/playing-with-java/my_fx/database/**/*.jar"
-    ]
-}
