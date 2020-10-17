@@ -26,6 +26,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.plaf.ActionMapUIResource;
+
 class DatabaseWorker {
 
     private final String url = "jdbc:mysql://localhost:3306/java_db";
@@ -103,7 +105,7 @@ class DatabaseWorker {
 }
 
 public class App extends Application {
-    private DatabaseWorker databaseWorker = null;
+    public static DatabaseWorker databaseWorker = new DatabaseWorker();
 
     public static void main(String[] args) {
         launch(args);
@@ -113,7 +115,6 @@ public class App extends Application {
     @Override
     public void init() {
         System.out.println("Initializing UI ");
-        this.databaseWorker = new DatabaseWorker();
     }
 
     /** perform cleanup and release resources */
@@ -128,14 +129,8 @@ public class App extends Application {
         BorderPane root = new BorderPane();
         root.setPadding(new Insets(10, 10, 10, 10));
 
-        Button AddUserButton;
-        Label ResultLabel;
-
-        final Label additionLabel = new Label("Enter details of user : ");
-        root.setTop(additionLabel);
-
-        ResultLabel = new Label("");
-        root.setBottom(ResultLabel);
+        final Label titleLabel = new Label("Enter details of user : ");
+        root.setTop(titleLabel);
 
         // Create a GridPane in the center of the BorderPane
         GridPane center = new GridPane();
@@ -167,25 +162,59 @@ public class App extends Application {
         center.add(ageInputFieldLabel, 0, 3);
         center.add(ageInputField, 1, 3);
 
-        // center.add()
+        Label ResultLabel = new Label("");
+        root.setBottom(ResultLabel);
 
-        AddUserButton = new Button("Save User");
+        Label OutputLabel = new Label("Output");
+
+        center.add(ResultLabel, 0, 6);
+        center.add(OutputLabel, 0, 7);
+
+        // describe button to add user
+        Button AddUserButton = new Button("Save User");
         center.add(AddUserButton, 0, 5);
         root.setCenter(center);
+
+        // describe button to load users
+        Button ShowUserButton = new Button("Load Data");
+        center.add(ShowUserButton, 1, 5);
 
         // Set the event handler when the button is clicked
         AddUserButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                // int number1 = Integer.parseInt(TextInput1.getText());
-                // int number2 = Integer.parseInt(TextInput2.getText());
-                // int sum = number1 + number2;
-                // ResultLabel.setText("The sum is " + sum);
+                // save details and show message to user
+                String name = nameInputField.getText();
+                String regNo = regInputField.getText();
+                String mobile = mobileInputField.getText();
+                int age = Integer.parseInt(ageInputField.getText());
+
+                // save data to database
+                if (App.databaseWorker.insertUser(name, regNo, mobile, age)) {
+                    ResultLabel.setText("New User Created");
+                } else {
+                    ResultLabel.setText("Error Creating User");
+                }
+            }
+        });
+
+        ShowUserButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                OutputLabel.setText("");
+                String outputString = "";
+                for (String[] user : App.databaseWorker.getAllUsers()) {
+                    outputString = outputString + "Name   : " + user[0] + "\n" + "Reg    : " + user[1] + "\n"
+                            + "Mobile : " + user[2] + "\n" + "Age    : " + user[3] + "\n\n";
+
+                }
+                OutputLabel.setText(outputString);
+
             }
         });
 
         Scene scene = new Scene(root, 600, 200);
-        primaryStage.setTitle("Compute the Sum");
+        primaryStage.setTitle("User Interaction | 19BCE2669");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
