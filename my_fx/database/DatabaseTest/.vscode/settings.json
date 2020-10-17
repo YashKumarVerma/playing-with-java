@@ -1,0 +1,12 @@
+{
+    "java.project.referencedLibraries": {
+        "include": [
+            "lib/**/*.jar",
+            "/usr/share/java/**/*.jar",
+            "/home/yash/Desktop/files/works/projects/playing-with-java/my_fx/database/**/*.jar"
+        ],
+        "exclude": [
+            "/home/yash/Desktop/files/works/projects/playing-with-java/my_fx/database/mysql.jar"
+        ]
+    }
+}
