@@ -1,7 +1,13 @@
 import java.util.Scanner;
+import rainbow.rainbow;
 
 class ClockWorker extends Thread {
     private int counter = 0;
+    private final String context = "[ " + rainbow.green(this.getName()) + " ] ";
+
+    ClockWorker() {
+        System.out.println(this.context + "ClockWorker started");
+    }
 
     @Override
     public void run() {
@@ -12,11 +18,12 @@ class ClockWorker extends Thread {
             }
 
         } catch (InterruptedException e) {
-            System.out.println("Exception !");
+            System.out.println(context + "Exception !");
         }
     }
 
     public int getSeconds() {
+        System.out.print(context);
         return this.counter;
     }
 }
@@ -24,20 +31,24 @@ class ClockWorker extends Thread {
 public class Clock {
 
     public static void main(String args[]) {
-        Scanner handler = new Scanner(System.in);
-        System.out.println("Time Counter started");
         String command;
+        final Scanner handler = new Scanner(System.in);
+        final String context = "[ " + rainbow.green(Thread.currentThread().getName()) + " ] ";
+
+        // tell user about current thread and that counter has started
+        System.out.println(context + " Time Counter started");
 
         // start separate thread with timer
-        ClockWorker worker = new ClockWorker();
+        final ClockWorker worker = new ClockWorker();
         worker.start();
 
         while (true) {
-            System.out.print("Enter yes to show live timer : ");
+            System.out.print(context + "Enter \"show\" to show live timer : ");
             command = handler.nextLine();
-            if (command.equals("yes")) {
+            if (command.equals("show")) {
                 System.out.println("Seconds elapsed : " + worker.getSeconds());
             }
         }
+
     }
 }

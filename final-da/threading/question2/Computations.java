@@ -3,9 +3,11 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import rainbow.rainbow;
+import rainbow.rainbow;
 
 class PrimeNumber extends Thread {
     private int nth;
+    private final String context = "[ " + rainbow.green(this.getName()) + " ] ";
 
     public PrimeNumber(int nth) {
         this.nth = nth;
@@ -13,7 +15,7 @@ class PrimeNumber extends Thread {
 
     @Override
     public void run() {
-        System.out.println(this.nth + "th prime number is " + this.findNth(this.nth));
+        System.out.println(this.context + this.nth + "th prime number is " + this.findNth(this.nth));
     }
 
     private int findNth(int nth) {
@@ -40,6 +42,7 @@ class PrimeNumber extends Thread {
 class PrimeFactors extends Thread {
     private int number;
     private Integer[] factors;
+    private final String context = "[ " + rainbow.green(this.getName()) + " ] ";
 
     public PrimeFactors(int number) {
         this.number = number;
@@ -47,7 +50,7 @@ class PrimeFactors extends Thread {
 
     @Override
     public void run() {
-        System.out.print("Prime Factors of " + this.number + " are : ");
+        System.out.print(this.context + "Prime Factors of " + this.number + " are : ");
         this.calculator();
         for (Integer num : this.factors) {
             System.out.print(num + " ");
@@ -69,9 +72,11 @@ class PrimeFactors extends Thread {
 
 public class Computations {
     public static void main(String args[]) {
+        final String context = "[ " + rainbow.green(Thread.currentThread().getName()) + " ] ";
+
         try {
             Scanner handler = new Scanner(System.in);
-            System.out.print(rainbow.bold("Enter a number : "));
+            System.out.print(context + rainbow.bold("Enter a number : "));
             int number = handler.nextInt();
 
             PrimeNumber primeNumber = new PrimeNumber(number);
@@ -80,11 +85,11 @@ public class Computations {
             PrimeFactors primeFactors = new PrimeFactors(number);
             primeFactors.start();
         } catch (IllegalArgumentException e) {
-            System.out.println(rainbow.red("Illegal arguments !"));
+            System.out.println(rainbow.red(context + "Illegal arguments !"));
         } catch (InputMismatchException e) {
-            System.out.println(rainbow.red("Invalid input type !"));
+            System.out.println(rainbow.red(context + "Invalid input type !"));
         } catch (Exception e) {
-            System.out.println(rainbow.red("Some Error encountered !"));
+            System.out.println(rainbow.red(context + "Some Error encountered !"));
         }
     }
 }
