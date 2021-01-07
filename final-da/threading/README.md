@@ -1,4 +1,5 @@
-# Info
+# JAVA Assignment 5
+- [[java-class.md]]
 - **Name** : Yash Kumar Verma
 - **Registration Number**: 19BCE2669
 - **Link to source code**: [YashKumarVerma/java-multithreading-exceptions](https://github.com/YashKumarVerma/java-multithreading-exceptions)

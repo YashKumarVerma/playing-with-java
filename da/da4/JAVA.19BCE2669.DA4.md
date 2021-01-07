@@ -1,5 +1,5 @@
 # Digital Assignment 4
-
+[[java-class.md]]
 - Submitted by: Yash Kumar Verma
 - Registration Number: 19BCE2669
 - Code Available on : [yashkumarverma-bot/semester3](https://github.com/yashkumarverma-bot/semester3)

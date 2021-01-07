@@ -35,8 +35,9 @@ public class Question1 {
             ThreadWorker temp = new ThreadWorker();
             temp.run();
             threadStorage.add(temp);
+            threadStorage.
 
-            System.out.print("Do you want to invoke more threads : y/n ");
+                    System.out.print("Do you want to invoke more threads : y/n ");
             choice = handler.nextLine();
         } while (choice.equals("y"));
         handler.close();

@@ -30,7 +30,7 @@ import java.util.List;
 /** class to handle all database operations */
 class DatabaseWorker {
 
-    private final String url = "jdbc:mysql://localhost:3306/java_db";
+    private final String url = "jdbc:mysql://localhost:3306/final_review";
     private final String user = "yash";
     private final String password = "yash2000.";
     private Connection connection = null;
@@ -150,26 +150,30 @@ public class App extends Application {
         TextField nameInputField = new TextField("Yash Kumar Verma");
         nameInputField.setPrefWidth(200);
         Label nameInputFieldLabel = new Label("Name : ");
-        center.add(nameInputFieldLabel, 0, 0);
-        center.add(nameInputField, 1, 0);
+        // center.add(nameInputFieldLabel, 0, 0);
+        // center.add(nameInputField, 1, 0);
+        center.addRow(0, nameInputFieldLabel, nameInputField);
 
         TextField regInputField = new TextField("19BCE2669");
         regInputField.setPrefWidth(200);
         Label regInputFieldLabel = new Label("Reg No : ");
-        center.add(regInputFieldLabel, 0, 1);
-        center.add(regInputField, 1, 1);
+        // center.add(regInputFieldLabel, 0, 1);
+        // center.add(regInputField, 1, 1);
+        center.addRow(1, regInputFieldLabel, regInputField);
 
         TextField mobileInputField = new TextField("+91 8864813176");
         mobileInputField.setPrefWidth(200);
         Label mobileInputFieldLabel = new Label("Mobile No : ");
-        center.add(mobileInputFieldLabel, 0, 2);
-        center.add(mobileInputField, 1, 2);
+        // center.add(mobileInputFieldLabel, 0, 2);
+        // center.add(mobileInputField, 1, 2);
+        center.addRow(2, mobileInputFieldLabel, mobileInputField);
 
         TextField ageInputField = new TextField("20");
         ageInputField.setPrefWidth(200);
         Label ageInputFieldLabel = new Label("Age : ");
-        center.add(ageInputFieldLabel, 0, 3);
-        center.add(ageInputField, 1, 3);
+        // center.add(ageInputFieldLabel, 0, 3);
+        // center.add(ageInputField, 1, 3);
+        center.addRow(3, ageInputFieldLabel, ageInputField);
 
         /** creating labels to show data to user */
         Label ResultLabel = new Label("");
